@@ -20,11 +20,18 @@ body {
 }
 
 @keyframes fadeInBody {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-h1, h2, h4 {
+h1,
+h2,
+h4 {
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 15px;
@@ -40,8 +47,13 @@ hr {
 }
 
 @keyframes slideIn {
-  from { width: 0; }
-  to { width: 80%; }
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 80%;
+  }
 }
 
 /* Header Styling */
@@ -55,13 +67,36 @@ hr {
 }
 
 /* Profile Image */
+/* Intro Section */
+#intro {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.intro-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+.about-me {
+  text-align: left;
+  max-width: 60%;
+  font-family: "Poppins", sans-serif;  /* Modern and clean font */
+  font-size: 1.2rem;  /* Increased font size */
+  line-height: 1.6;  /* Better readability */
+  color: #f0f0f0;  /* Soft white for readability on dark backgrounds */
+}
+
 .Nikunjimag {
   width: 250px;
-  height: 250px;
-  border-radius: 50%;
+  height: 300px;
+  border-radius: 10%;
   box-shadow: 0 0 25px rgba(255, 255, 255, 0.5);
   transition: transform 0.4s ease-in-out, box-shadow 0.4s;
-  margin: 20px 0;
 }
 
 .Nikunjimag:hover {
@@ -69,8 +104,18 @@ hr {
   box-shadow: 0 0 35px rgba(255, 255, 255, 0.7);
 }
 
+.quote {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #ffcc00;
+  margin-top: 10px;
+}
+
+
+
 /* Table Styling */
-table {
+/* Education Table */
+.education-table {
   width: 80%;
   margin: auto;
   border-collapse: collapse;
@@ -81,27 +126,103 @@ table {
   animation: fadeIn 1s ease-in-out;
 }
 
-td, th {
+/* Table Headers & Cells */
+.education-table th, .education-table td {
   padding: 15px;
+  text-align: center;
   border: 1px solid rgba(255, 255, 255, 0.3);
+  transition: background 0.3s ease-in-out, transform 0.3s;
 }
 
-th {
+/* Table Header */
+.education-table th {
   background: rgba(255, 255, 255, 0.2);
   font-size: 1.2rem;
+  color: #ffcc00;
+  text-transform: uppercase;
 }
 
+/* Row Hover Effect */
+.education-table tr:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.02);
+}
+
+/* Alternate Row Styling */
+.education-table tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Fade-In Animation */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+
 /* Skills Section */
-ol, ul {
-  text-align: left;
-  display: inline-block;
-  margin: 10px auto;
-  padding: 15px;
+#skills {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+}
+
+.technical-skills,
+.non-technical-skills {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 12px;
-  width: 60%;
+  padding: 20px;
+  width: 280px;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.technical-skills:hover,
+.non-technical-skills:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #ffcc00;
+}
+
+ol,
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  font-size: 1.2rem;
+  padding: 8px 0;
+  transition: color 0.3s ease;
+}
+
+li:hover {
+  color: #ffcc00;
+  cursor: pointer;
+}
+
 
 /* Contact Form */
 form {
@@ -148,36 +269,85 @@ input[type="submit"]:hover {
 }
 
 /* Social Links */
-a {
+/* Footer Section */
+footer {
+  width: 100%;
+  margin-top: 50px;
+  margin-bottom: 0px;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  font-family: "Poppins", sans-serif;
+  box-shadow: 0 -5px 10px rgba(255, 255, 255, 0.2);
+  animation: slideUp 1s ease-in-out;
+}
+
+/* Footer Container */
+.footer-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Social Links */
+.social-links {
+  margin: 20px 0;
+}
+
+.social-links a {
   color: white;
   font-size: 2rem;
   margin: 15px;
+  display: inline-block;
   transition: color 0.3s ease-in-out, transform 0.3s;
 }
 
-a:hover {
+.social-links a:hover {
   color: #ff9966;
-  transform: scale(1.2);
+  transform: scale(1.2) rotate(5deg);
 }
+
+/* Slide-Up Animation */
+@keyframes slideUp {
+  from {
+      opacity: 0;
+      transform: translateY(30px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
 
 /* Animations */
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(-20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
-  table, form, ol, ul {
-      width: 90%;
+
+  table,
+  form,
+  ol,
+  ul {
+    width: 90%;
   }
 
   .box {
-      font-size: 2.8rem;
+    font-size: 2.8rem;
   }
 
   .Nikunjimag {
-      width: 200px;
-      height: 200px;
+    width: 200px;
+    height: 200px;
   }
 }
